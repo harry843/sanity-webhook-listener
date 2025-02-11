@@ -1,11 +1,10 @@
 import express from 'express';
-import axios from 'axios';
 
 const app = express();
 app.use(express.json()); // Parse JSON request body
 
 // Function to generate the correct Sanity image URL
-function genImageUrl(ref) {
+export function genImageUrl(ref) {
     const imageBaseUrl = `https://cdn.sanity.io/images/g2pdrwyj/production/`;
     const imageExtensions = ['png', 'jpg', 'jpeg', 'gif', 'bmp', 'svg', 'avif', 'webp'];
     const extension = ref.split('-').slice(-1)[0];
