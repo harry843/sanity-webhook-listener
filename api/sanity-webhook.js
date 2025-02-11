@@ -59,6 +59,7 @@ export default async function handler(req, res) {
         }
       );
 
+      console.log("Webhook processed successfully:", { title, url, imageUrl, feature, tags, documentId, language })
       return res.status(200).json({ success: true, message: "Webhook processed successfully" });
     } catch (error) {
       console.error("Error processing webhook:", error);
