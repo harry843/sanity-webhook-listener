@@ -1,6 +1,18 @@
 // Import necessary modules
 import axios from 'axios';
-import { genImageUrl } from '../..';
+
+function genImageUrl(ref) {
+    const imageBaseUrl = `https://cdn.sanity.io/images/g2pdrwyj/production/`;
+    const imageExtensions = ['png', 'jpg', 'jpeg', 'gif', 'bmp', 'svg', 'avif', 'webp'];
+    const extension = ref.split('-').slice(-1)[0];
+    const hasImageExtension = imageExtensions.includes(extension);
+
+    if (hasImageExtension) {
+        return imageBaseUrl + ref.replace('image-', '').replace(`-${extension}`, `.${extension}`);
+    } else {
+        return null;
+    }
+}
 
 export default async function handler(req, res) {
   // If the request is a GET, return a simple active message.
