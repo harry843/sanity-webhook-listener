@@ -1,10 +1,10 @@
 {
     "version": 2,
     "builds": [
-      { "src": "sanity-webhook.js", "use": "@vercel/node" }
+      { "src": "api/sanity-webhook.js", "use": "@vercel/node" }
     ],
     "routes": [
-      { "src": "/sanity-webhook", "dest": "/sanity-webhook.js" }
+      { "src": "/sanity-webhook", "dest": "api/sanity-webhook.js" }
     ]
   }
   
