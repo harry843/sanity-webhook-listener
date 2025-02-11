@@ -1,1 +1,6 @@
-.vercel
+/.vercel
+.env
+.vercelignore
+package-lock.json
+/node-modules
+node_modules
